@@ -15,7 +15,26 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hello World</h1>
+      <div class="row">
+        <div class="col-5">
+          <form id="search-form">
+            <input
+              type="text"
+              placeholder="search..."
+              style="text-transform: capitalize"
+              class="search-bar"
+              id="search-input"
+            />
+          </form>
+        </div>
+        <div class="col-2">
+          <input
+            type="submit"
+            value="Search"
+            class="form-control btn btn-outline-primary search-submit w-100"
+          />
+        </div>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
