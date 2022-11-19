@@ -15,57 +15,59 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-5">
-          <form id="search-form">
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-5">
+            <form id="search-form">
+              <input
+                type="text"
+                placeholder="search..."
+                style="text-transform: capitalize"
+                class="search-bar"
+                id="search-input"
+              />
+            </form>
+          </div>
+          <div class="col-2">
             <input
-              type="text"
-              placeholder="search..."
-              style="text-transform: capitalize"
-              class="search-bar"
-              id="search-input"
+              type="submit"
+              value="Search"
+              class="form-control btn btn-outline-primary search-submit w-100"
             />
-          </form>
-        </div>
-        <div class="col-2">
-          <input
-            type="submit"
-            value="Search"
-            class="form-control btn btn-outline-primary search-submit w-100"
-          />
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-3">
-          <div class="card">
-            <div class="card-body current-place-date-time">
-              <h5 class="card-title">Greenville, SC</h5>
-              <p class="card-text" id="current-date">Oct 16 2022</p>
-              <p class="card-text" id="current-time">10 am</p>
-            </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="card current-condition" style="width: 18rem">
-            <i class="fa-solid fa-sun current-condition-icon"></i>
-            <div class="card-body">
-              <p
-                class="card-text current-condition-text"
-                id="current-condition"
-              >
-                sunny
-              </p>
+        <br />
+        <div class="row">
+          <div class="col-3">
+            <div class="card">
+              <div class="card-body current-place-date-time">
+                <h5 class="card-title">Greenville, SC</h5>
+                <p class="card-text" id="current-date">Oct 16 2022</p>
+                <p class="card-text" id="current-time">10 am</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-3">
-          <div class="card current-temp-container">
-            <div class="card-body current-temp">
-              <span id="temp">72</span>
-              <button class="fahr-button" id="fahr-button">
-                <a href="#" id="show-fahr">°F</a>
-              </button>
+          <div class="col-4">
+            <div class="card current-condition" style="width: 18rem">
+              <i class="fa-solid fa-sun current-condition-icon"></i>
+              <div class="card-body">
+                <p
+                  class="card-text current-condition-text"
+                  id="current-condition"
+                >
+                  sunny
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card current-temp-container">
+              <div class="card-body current-temp">
+                <span id="temp">72</span>
+                <button class="fahr-button" id="fahr-button">
+                  <a href="#" id="show-fahr">°F</a>
+                </button>
+              </div>
             </div>
           </div>
         </div>
