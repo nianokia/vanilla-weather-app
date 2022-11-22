@@ -7,9 +7,15 @@ h5 {
   line-height: 1.5;
 }
 
+.weather-app-wrapper {
+  margin: 50px auto;
+  max-width: 1000px;
+  min-width: 900px;
+}
+
 .weather-app {
   border: solid grey 1px;
-  margin-top: 100px;
+
   padding-bottom: 40px;
   padding-left: 40px;
   background: radial-gradient(
@@ -41,7 +47,7 @@ h5 {
 }
 
 .current-place-date-time {
-  margin-left: 50px;
+  margin-left: 20px;
   font-size: 21px;
   line-height: 1.2;
   font-weight: 500;
@@ -50,7 +56,6 @@ h5 {
 .current-condition {
   text-align: center;
   padding: 5px;
-  margin-left: 30px;
 }
 
 .current-condition-icon {
@@ -95,7 +100,7 @@ h5 {
   background: white;
 }
 
-.fa-sun {
+.forecast-sun {
   margin: 10px 0;
   font-size: 45px;
   color: orange;
