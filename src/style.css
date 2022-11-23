@@ -10,12 +10,11 @@ h5 {
 .weather-app-wrapper {
   margin: 50px auto;
   max-width: 1000px;
-  min-width: 900px;
+  min-width: 830px;
 }
 
 .weather-app {
   border: solid grey 1px;
-
   padding-bottom: 40px;
   padding-left: 40px;
   background: radial-gradient(

@@ -21,6 +21,7 @@
       src="https://kit.fontawesome.com/31d28e8bd2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -57,7 +58,7 @@
             <div class="col-3">
               <div class="card">
                 <div class="card-body current-place-date-time">
-                  <h5 class="card-title">Greenville, SC</h5>
+                  <h5 class="card-title" id="city-name"></h5>
                   <p class="card-text" id="current-date">Oct 16 2022</p>
                   <p class="card-text" id="current-time">10 am</p>
                 </div>
@@ -79,7 +80,7 @@
             <div class="col-3">
               <div class="card current-temp-container">
                 <div class="card-body current-temp">
-                  <span id="temp">72</span>
+                  <span id="temp"></span>
                   <button class="fahr-button" id="fahr-button">
                     <a href="#" id="show-fahr">°F</a>
                   </button>
