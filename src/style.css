@@ -78,10 +78,11 @@ h5 {
   text-align: center;
   font-size: 50px;
   font-weight: 500;
+  line-height: 1;
 }
 
 .current-weather-descriptions-container {
-  padding: 0;
+  padding: 5px;
 }
 
 .current-temp-container {
@@ -90,7 +91,19 @@ h5 {
 }
 
 .units {
+  position: relative;
   font-size: 16px;
+  top: -20px;
+}
+
+.current-temp-container .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.current-temp-container .active:hover {
+  text-decoration: none;
 }
 
 .current-weather-descriptions {

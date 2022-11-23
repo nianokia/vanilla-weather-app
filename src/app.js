@@ -97,12 +97,16 @@ function showCelsius(event) {
   let temp = document.querySelector("#temp");
   let celsiusTemp = (fahrTemp - 32) * (5 / 9);
   temp.innerHTML = Math.round(celsiusTemp);
+  fahrLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 function showFahr(event) {
   event.preventDefault();
   let temp = document.querySelector("#temp");
   temp.innerHTML = Math.round(fahrTemp);
+  celsiusLink.classList.remove("active");
+  fahrLink.classList.add("active");
 }
 
 let fahrTemp = null;
