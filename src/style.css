@@ -66,11 +66,19 @@ h5 {
 .current-condition-text {
   font-size: 21px;
   font-weight: 500;
+  text-transform: capitalize;
+}
+
+.current-weather-descriptions {
+  list-style: none;
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-left: -20px;
 }
 
 .current-temp-container {
-  margin-top: 45px;
-  margin-left: 30px;
+  margin-top: 40px;
   padding: 5px;
 }
 
