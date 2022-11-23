@@ -66,6 +66,9 @@ h5 {
 .current-condition-text {
   font-size: 21px;
   font-weight: 500;
+}
+
+.current-condition-text:first-letter {
   text-transform: capitalize;
 }
 
