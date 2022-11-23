@@ -64,6 +64,7 @@ function displayTemp(response) {
   let time = document.querySelector("#current-time");
   let temp = Math.round(response.data.temperature.current);
   let currentTemperature = document.querySelector("#temp");
+  let icon = document.querySelector("#current-condition-icon");
   let condition = document.querySelector("#current-condition");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
@@ -72,6 +73,8 @@ function displayTemp(response) {
   date.innerHTML = formatDate(response.data.time * 1000);
   time.innerHTML = formatTime(response.data.time * 1000);
   currentTemperature.innerHTML = temp;
+  icon.setAttribute("src", `${response.data.condition.icon_url}`);
+  icon.setAttribute("alt", `${response.data.condition.icon}`);
   condition.innerHTML = response.data.condition.description;
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
   wind.innerHTML = `${response.data.wind.speed} mph`;

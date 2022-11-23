@@ -66,7 +66,7 @@
             </div>
             <div class="col-3">
               <div class="card current-condition">
-                <i class="fa-solid fa-sun current-condition-icon"></i>
+                <img src="#" alt="" id="current-condition-icon" width="120px" />
                 <div class="card-body">
                   <p
                     class="card-text current-condition-text"
@@ -78,6 +78,12 @@
             <div class="col-3">
               <div class="card current-weather-descriptions-container">
                 <div class="card-body">
+                  <p class="current-temp-container">
+                    <span class="current-temp" id="temp"></span>
+                    <button class="fahr-button" id="fahr-button">
+                      <a href="#" id="show-fahr">°F</a>
+                    </button>
+                  </p>
                   <ul class="current-weather-descriptions">
                     <li class="precipitation">
                       Precipitation: <span id="precipitation"></span>
@@ -87,16 +93,6 @@
                       Humidity: <span id="humidity"></span>
                     </li>
                   </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="card current-temp-container">
-                <div class="card-body current-temp">
-                  <span id="temp"></span>
-                  <button class="fahr-button" id="fahr-button">
-                    <a href="#" id="show-fahr">°F</a>
-                  </button>
                 </div>
               </div>
             </div>
