@@ -58,7 +58,6 @@ function formatTime(timestamp) {
 }
 
 function displayTemp(response) {
-  console.log(response.data);
   let cityName = document.querySelector("#city-name");
   let date = document.querySelector("#current-date");
   let time = document.querySelector("#current-time");
@@ -80,7 +79,19 @@ function displayTemp(response) {
   wind.innerHTML = `${response.data.wind.speed} mph`;
 }
 
-let apiKey = "9733a0bfob8d3b90ab42ae5a571ftfa4";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Atlanta&key=${apiKey}&units=imperial`;
+function search(city) {
+  let apiKey = "9733a0bfob8d3b90ab42ae5a571ftfa4";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayTemp);
+}
 
-axios.get(apiUrl).then(displayTemp);
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  search(searchInputElement.value);
+}
+
+search("Atlanta");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

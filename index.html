@@ -28,31 +28,32 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <div class="row">
-            <div class="col-5">
-              <form id="search-form">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-5">
                 <input
-                  type="text"
+                  type="search"
                   placeholder="search..."
                   style="text-transform: capitalize"
                   class="search-bar"
                   id="search-input"
+                  autocomplete="off"
                 />
-              </form>
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-outline-primary search-submit w-100"
+                />
+              </div>
+              <div class="col-2">
+                <button class="btn btn-outline-success current-button w-100">
+                  Current
+                </button>
+              </div>
             </div>
-            <div class="col-2">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-outline-primary search-submit w-100"
-              />
-            </div>
-            <div class="col-2">
-              <button class="btn btn-outline-success current-button w-100">
-                Current
-              </button>
-            </div>
-          </div>
+          </form>
           <br />
           <div class="row">
             <div class="col-3">
