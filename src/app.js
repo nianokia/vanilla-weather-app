@@ -61,17 +61,18 @@ function displayTemp(response) {
   let cityName = document.querySelector("#city-name");
   let date = document.querySelector("#current-date");
   let time = document.querySelector("#current-time");
-  let temp = Math.round(response.data.temperature.current);
-  let currentTemperature = document.querySelector("#temp");
+  let temp = document.querySelector("#temp");
   let icon = document.querySelector("#current-condition-icon");
   let condition = document.querySelector("#current-condition");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
 
+  fahrTemp = response.data.temperature.current;
+
   cityName.innerHTML = response.data.city;
   date.innerHTML = formatDate(response.data.time * 1000);
   time.innerHTML = formatTime(response.data.time * 1000);
-  currentTemperature.innerHTML = temp;
+  temp.innerHTML = Math.round(fahrTemp);
   icon.setAttribute("src", `${response.data.condition.icon_url}`);
   icon.setAttribute("alt", `${response.data.condition.icon}`);
   condition.innerHTML = response.data.condition.description;
@@ -91,7 +92,19 @@ function handleSubmit(event) {
   search(searchInputElement.value);
 }
 
-search("Atlanta");
+function showCelsius(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#temp");
+  let celsiusTemp = (fahrTemp - 32) * (5 / 9);
+  temp.innerHTML = Math.round(celsiusTemp);
+}
+
+let fahrTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
+
+search("Atlanta");
