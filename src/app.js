@@ -99,6 +99,12 @@ function showCelsius(event) {
   temp.innerHTML = Math.round(celsiusTemp);
 }
 
+function showFahr(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#temp");
+  temp.innerHTML = Math.round(fahrTemp);
+}
+
 let fahrTemp = null;
 
 let form = document.querySelector("#search-form");
@@ -106,5 +112,8 @@ form.addEventListener("submit", handleSubmit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
+
+let fahrLink = document.querySelector("#fahr-link");
+fahrLink.addEventListener("click", showFahr);
 
 search("Atlanta");
