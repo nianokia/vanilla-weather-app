@@ -57,7 +57,8 @@ function formatTime(timestamp) {
   return `${hour} ${amPm}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -81,7 +82,16 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "9733a0bfob8d3b90ab42ae5a571ftfa4";
+  let longitude = coordinates.longitude;
+  let latitude = coordinates.latitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemp(response) {
+  console.log(response.data);
   let cityName = document.querySelector("#city-name");
   let date = document.querySelector("#current-date");
   let time = document.querySelector("#current-time");
@@ -102,6 +112,8 @@ function displayTemp(response) {
   condition.innerHTML = response.data.condition.description;
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
   wind.innerHTML = `${response.data.wind.speed} mph`;
+
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {
@@ -145,4 +157,3 @@ let fahrLink = document.querySelector("#fahr-link");
 fahrLink.addEventListener("click", showFahr);
 
 search("Atlanta");
-displayForecast();
