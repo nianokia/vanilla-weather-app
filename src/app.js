@@ -57,26 +57,39 @@ function formatTime(timestamp) {
   return `${hour} ${amPm}`;
 }
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
 
-  let days = ["Today", "Mon", "Tue", "Wed", "Thu"];
+  let icon = document.querySelector("#forecast-icon");
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2">
       <div class="card-body border border-warning five-day-forecast">
-        <h5 class="card-title">${day}</h5>
-        <i class="fa-solid fa-sun forecast-sun"></i>
-        <p class="card-text">66 °F</p>
+        <h5 class="card-title">${formatForecastDay(forecastDay.time)}</h5>
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+          forecastDay.condition.icon
+        }.png" alt="" width="50px" id="forecast-icon" />
+        <p class="card-text">${Math.round(forecastDay.temperature.day)}°F</p>
       </div>
     </div>
     `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
