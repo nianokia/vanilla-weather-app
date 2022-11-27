@@ -57,6 +57,30 @@ function formatTime(timestamp) {
   return `${hour} ${amPm}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Today", "Mon", "Tue", "Wed", "Thu"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+      <div class="card-body border border-warning five-day-forecast">
+        <h5 class="card-title">${day}</h5>
+        <i class="fa-solid fa-sun forecast-sun"></i>
+        <p class="card-text">66 °F</p>
+      </div>
+    </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemp(response) {
   let cityName = document.querySelector("#city-name");
   let date = document.querySelector("#current-date");
@@ -121,3 +145,4 @@ let fahrLink = document.querySelector("#fahr-link");
 fahrLink.addEventListener("click", showFahr);
 
 search("Atlanta");
+displayForecast();
