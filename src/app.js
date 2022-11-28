@@ -66,7 +66,6 @@ function formatForecastDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -84,8 +83,8 @@ function displayForecast(response) {
         <h5 class="card-title">${formatForecastDay(forecastDay.time)}</h5>
         <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
           forecastDay.condition.icon
-        }.png" alt="" width="50px" id="forecast-icon" />
-        <p class="card-text">${Math.round(forecastDay.temperature.day)}°F</p>
+        }.png" alt="" width="60px" id="forecast-icon" />
+        <p class="card-text">${Math.round(forecastDay.temperature.day)} °F</p>
       </div>
     </div>
     `;
@@ -104,7 +103,6 @@ function getForecast(coordinates) {
 }
 
 function displayTemp(response) {
-  console.log(response.data);
   let cityName = document.querySelector("#city-name");
   let date = document.querySelector("#current-date");
   let time = document.querySelector("#current-time");
@@ -141,32 +139,7 @@ function handleSubmit(event) {
   search(searchInputElement.value);
 }
 
-function showCelsius(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp");
-  let celsiusTemp = (fahrTemp - 32) * (5 / 9);
-  temp.innerHTML = Math.round(celsiusTemp);
-  fahrLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-}
-
-function showFahr(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp");
-  temp.innerHTML = Math.round(fahrTemp);
-  celsiusLink.classList.remove("active");
-  fahrLink.classList.add("active");
-}
-
-let fahrTemp = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsius);
-
-let fahrLink = document.querySelector("#fahr-link");
-fahrLink.addEventListener("click", showFahr);
 
 search("Atlanta");

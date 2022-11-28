@@ -90,20 +90,10 @@ h5 {
   margin-top: -10px;
 }
 
-.units {
+.unit {
   position: relative;
   font-size: 16px;
   top: -20px;
-}
-
-.current-temp-container .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-
-.current-temp-container .active:hover {
-  text-decoration: none;
 }
 
 .current-weather-descriptions {
