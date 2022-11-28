@@ -1,5 +1,17 @@
 body {
   font-family: "Baloo 2", cursive;
+  color: #09324c;
+  background: radial-gradient(
+    450px at 100.2% 3%,
+    rgb(12, 85, 141) 31.1%,
+    rgb(205, 181, 93) 36.4%,
+    rgb(244, 102, 90) 50.9%,
+    rgb(199, 206, 187) 60.7%,
+    rgb(249, 140, 69) 72.5%,
+    rgb(12, 73, 116) 72.6%
+  );
+  padding: 96.2px;
+  min-width: 900px;
 }
 
 h5 {
@@ -9,40 +21,44 @@ h5 {
 
 .weather-app-wrapper {
   margin: 50px auto;
-  max-width: 1000px;
-  min-width: 800px;
+  box-sizing: border-box;
+  width: 850px;
 }
 
 .weather-app {
   border: solid grey 1px;
   padding-bottom: 40px;
-  padding-left: 40px;
-  background: radial-gradient(
-    343px at 46.3% 47.5%,
-    rgb(242, 242, 242) 0%,
-    rgb(241, 241, 241) 72.9%
-  );
+  background: #edf7fa;
+  border-radius: 10px;
 }
 
 .search-bar {
   display: block;
   margin-top: 30px;
+  margin-left: 30px;
   margin: 20 auto;
-  padding-right: 60px;
+  padding-right: 150px;
   font-size: 21px;
   color: grey;
+  border: solid lightgrey 1px;
 }
 
 .search-submit {
   margin-top: 30px;
   background: white;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  border: solid #0c4974 1px;
+  color: #0c4974;
 }
 
-.current-button {
-  margin-top: 30px;
-  margin-left: 20px;
-  padding: 6px 38px;
-  background: white;
+.weather-overview {
+  padding: 0px 10px;
+}
+
+.current-place-date-time-card {
+  border: none;
+  background: none;
 }
 
 .current-place-date-time {
@@ -53,11 +69,22 @@ h5 {
   font-weight: 500;
 }
 
+.city-name {
+  font-size: 48px;
+}
+
+.current-time {
+  margin-top: -15px;
+}
+
 .current-condition {
   text-align: center;
   vertical-align: middle;
   display: flex;
   align-items: center;
+  border: none;
+  background: none;
+  margin-left: -20px;
 }
 
 .current-condition-icon {
@@ -65,7 +92,7 @@ h5 {
 }
 
 .current-condition-text {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 500;
   margin-top: -25px;
 }
@@ -83,6 +110,10 @@ h5 {
 
 .current-weather-descriptions-container {
   padding: 5px;
+  margin-top: 40px;
+  border: none;
+  background: none;
+  align-items: center;
 }
 
 .current-temp-container {
@@ -98,19 +129,26 @@ h5 {
 
 .current-weather-descriptions {
   list-style: none;
+  padding-left: 0;
+  text-align: center;
   font-size: 16px;
   font-weight: 500;
   margin-top: -10px;
-  margin-left: -20px;
   margin-bottom: -5px;
+}
+
+.forecast {
+  padding: 0px 30px;
 }
 
 .five-day-forecast {
   text-align: center;
   font-size: 23px;
   margin-top: 25px;
-  padding: 20px;
+  margin-left: 0px;
+  padding: 7px;
   background: white;
+  border-radius: 10px;
 }
 
 .forecast-sun {
@@ -139,4 +177,9 @@ h5 {
 
 .coder {
   margin-top: 5px;
+  color: lightgray;
+}
+
+.coder-link {
+  color: lightblue;
 }

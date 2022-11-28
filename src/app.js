@@ -74,7 +74,7 @@ function displayForecast(response) {
   let icon = document.querySelector("#forecast-icon");
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `

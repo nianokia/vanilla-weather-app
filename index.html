@@ -30,7 +30,7 @@
         <div class="weather-app">
           <form id="search-form">
             <div class="row">
-              <div class="col-6">
+              <div class="col-7">
                 <input
                   type="search"
                   placeholder="search..."
@@ -50,19 +50,21 @@
             </div>
           </form>
           <br />
-          <div class="row">
-            <div class="col-3">
-              <div class="card">
+          <div class="row weather-overview">
+            <div class="col-4">
+              <div class="card current-place-date-time-card">
                 <div class="card-body current-place-date-time">
-                  <h5 class="card-title" id="city-name"></h5>
-                  <p class="card-text" id="current-date">Oct 16 2022</p>
-                  <p class="card-text" id="current-time"></p>
+                  <h5 class="card-title city-name" id="city-name"></h5>
+                  <p class="card-text current-date" id="current-date">
+                    Oct 16 2022
+                  </p>
+                  <p class="card-text current-time" id="current-time"></p>
                 </div>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="card current-condition">
-                <img src="#" alt="" id="current-condition-icon" width="120px" />
+                <img src="#" alt="" id="current-condition-icon" width="140px" />
                 <div class="card-body">
                   <p
                     class="card-text current-condition-text"
@@ -71,7 +73,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="card current-weather-descriptions-container">
                 <div class="card-body">
                   <p class="current-temp-container">
@@ -94,6 +96,7 @@
           <a
             href="https://github.com/nianokia/vanilla-weather-app"
             target="_blank"
+            class="coder-link"
             >Open-source code</a
           >
           by Nia Wright
